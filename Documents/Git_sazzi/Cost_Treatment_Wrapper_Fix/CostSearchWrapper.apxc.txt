@@ -1,0 +1,421 @@
+//
+//created on 22-06-2017
+//
+
+public class CostSearchWrapper{
+    
+    public CostSearchWrapper(){
+        init();
+        
+        
+    }
+    public void init(){
+        integer i=0;
+        i++;
+        i++;
+        i++;
+        i++;
+        
+    }
+    @AuraEnabled  
+    public cls_SearchInfo SearchInfo;
+    @AuraEnabled  
+    public String ConfirmationCode; //NERLBUQ1MVD
+    @AuraEnabled  
+    public cls_Benefits[] Benefits;
+    @AuraEnabled  
+    public cls_TreatmentCosts[] TreatmentCosts;
+    class cls_SearchInfo {
+        
+        @AuraEnabled  
+        public cls_ShopTreatmentRequestInfo ShopTreatmentRequestInfo;
+        public cls_BenefitRequestInfo BenefitRequestInfo;
+        @AuraEnabled  
+        public cls_CostRequestInfo CostRequestInfo;
+        public boolean IsSurgicalConcierge;
+        @AuraEnabled  
+        public String TreatmentCode;    //17801
+        @AuraEnabled  
+        public String TxDesc;   
+        @AuraEnabled  
+        public Integer ProcedureId; //1283
+        @AuraEnabled  
+        public Integer ClientId; 
+        @AuraEnabled  
+        public Integer MemberId;    
+        @AuraEnabled  
+        public String ClientMemberId;   
+        @AuraEnabled  
+        public String MemberDOB;    
+        @AuraEnabled  
+        public Integer SearchRadius;    
+        @AuraEnabled  
+        public String SearchZipCode;   
+        @AuraEnabled  
+        public String UserId;
+        @AuraEnabled  
+        public String UserType;
+        @AuraEnabled  
+        public String UserFirst;
+        @AuraEnabled  
+        public String UserLast;
+    }
+    class cls_ShopTreatmentRequestInfo {
+        
+        @AuraEnabled  
+        public String RequestDate;  
+        @AuraEnabled  
+        public string  DataSource;
+        @AuraEnabled  
+        public String RequestUrl;   
+        @AuraEnabled  
+        public cls_DataSourceInfo DataSourceInfo;
+        @AuraEnabled  
+        public String RequestOrigin;    
+    }
+    class cls_DataSource {
+        
+    }
+    class cls_DataSourceInfo {
+        
+        @AuraEnabled  
+        public String Name; 
+        @AuraEnabled  
+        public cls_Messages[] Messages;
+    }
+    class cls_BenefitRequestInfo {
+        
+        @AuraEnabled  
+        public String RequestDate;  
+        @AuraEnabled  
+        public String DataSource;  
+        @AuraEnabled  
+        public String RequestUrl;   
+        @AuraEnabled  
+        public cls_DataSourceInfo DataSourceInfo;
+        @AuraEnabled  
+        public String RequestOrigin;
+    }
+    class cls_RequestOrigin {
+        
+    }
+    class cls_CostRequestInfo {
+        
+        @AuraEnabled  
+        public boolean SearchRadiusExpanded;
+        @AuraEnabled  
+        public string SearchRadiusExpandedTo;
+        @AuraEnabled  
+        public string SearchRadiusExpansionReason;
+        @AuraEnabled  
+        public boolean DynamicCostSavingsEnabled;
+        @AuraEnabled  
+        public boolean DynamicCostSavingsVarianceAttained;
+        @AuraEnabled  
+        public String RequestDate;  
+        @AuraEnabled  
+        public String DataSource;   
+        @AuraEnabled  
+        public String RequestUrl;   
+        @AuraEnabled  
+        public cls_DataSourceInfo DataSourceInfo;
+        @AuraEnabled  
+        public string RequestOrigin;
+    }
+    class cls_SearchRadiusExpandedTo {
+    }
+    class cls_SearchRadiusExpansionReason {
+    }
+    class cls_Messages {
+        public cls_Details[] Details;
+        
+    }
+    
+    class cls_Details {		
+        public String MessageType;	//msgCode		
+        public String Value;	//00		
+    }
+    class cls_UserId {
+    }
+    class cls_UserType {
+    }
+    class cls_UserFirst {
+    }
+    class cls_UserLast {
+    }
+    class cls_Benefits {
+        
+        @AuraEnabled  
+        public cls_IndividualDeductible IndividualDeductible;
+        @AuraEnabled  
+        public cls_FamilyDeductible FamilyDeductible;
+        @AuraEnabled  
+        public cls_IndividualOutOfPocket IndividualOutOfPocket;
+        @AuraEnabled  
+        public cls_FamilyOutOfPocket FamilyOutOfPocket;
+        @AuraEnabled  
+        public cls_TreatmentSpecificDeductible TreatmentSpecificDeductible;
+        @AuraEnabled  
+        public String CoverageStartDate;    
+        @AuraEnabled  
+        public string CoverageEndDate;
+        @AuraEnabled  
+        public String DateUpdated; 
+        @AuraEnabled  
+        public Integer TierNumber;  
+        @AuraEnabled  
+        public String TierName; 
+        @AuraEnabled  
+        public boolean ApplyCopayToCost;
+        @AuraEnabled  
+        public boolean ApplyDeductibleToCost;
+        @AuraEnabled  
+        public string ProviderId;
+        @AuraEnabled  
+        public Integer ProviderTypeId;  
+        @AuraEnabled  
+        public String GenderCode;
+        @AuraEnabled  
+        public String DateOfBirth; 
+        @AuraEnabled  
+        public String ErrorCode;  
+        @AuraEnabled  
+        public String HsaBalanceAmount;
+        @AuraEnabled
+        public HsaAccount[] HsaAccounts;
+        @AuraEnabled  
+        public String Message;
+        @AuraEnabled  
+        public string MemberNetworkType;
+        @AuraEnabled  
+        public boolean IsPlanAca;
+        @AuraEnabled  
+        public decimal CoinsuranceRate; 
+        @AuraEnabled  
+        public decimal CoPayAmount; 
+    }
+    class cls_IndividualDeductible {
+        @AuraEnabled  
+        public decimal Limit1; 
+        @AuraEnabled  
+        public string AccumulatedAmount;
+    }
+    class cls_AccumulatedAmount {
+    }
+    class cls_FamilyDeductible {
+        @AuraEnabled  
+        public string Limit1;
+        @AuraEnabled  
+        public string AccumulatedAmount;
+    }
+    class HsaAccount {
+        @AuraEnabled
+        public Decimal Amount;
+        @AuraEnabled
+        public String Description;
+    }
+    class cls_Limit {
+    }
+    class cls_IndividualOutOfPocket {
+        @AuraEnabled  
+        public decimal Limit1;  
+        @AuraEnabled  
+        public string AccumulatedAmount;
+    }
+    class cls_FamilyOutOfPocket {
+        @AuraEnabled  
+        public string Limit1;
+        @AuraEnabled  
+        public string AccumulatedAmount;
+    }
+    class cls_TreatmentSpecificDeductible {
+        public decimal Limit1;
+        public string AccumulatedAmount;
+    }
+    class cls_CoverageEndDate {
+    }
+    class cls_ProviderId {
+    }
+    class cls_HsaBalanceAmount {
+    }
+    class cls_Message {
+    }
+    class cls_MemberNetworkType {
+    }
+    class cls_TreatmentCosts {
+        
+        @AuraEnabled  
+        public boolean EligibleForIncentive;
+        @AuraEnabled  
+        public Decimal IncentiveAmount; 
+        @AuraEnabled  
+        public decimal CostToMember;
+        @AuraEnabled  
+        public string AmountTowardCoinsurance;
+        @AuraEnabled  
+        public string AmountTowardDeductible;
+        @AuraEnabled  
+        public string AmountTowardCopay;
+        @AuraEnabled  
+        public Decimal VarianceScore; 
+        @AuraEnabled  
+        public Integer Rank; 
+        @AuraEnabled  
+        public boolean PreferredRankingApplied;
+        @AuraEnabled  
+        public string RelativeCost;
+        @AuraEnabled  
+        public string RelativeFromValue;
+        @AuraEnabled  
+        public Integer ResultRecordId; 
+        @AuraEnabled  
+        public string NotCoveredAmount;
+        @AuraEnabled  
+        public boolean NonCoveredChargeAppliesToOpx;
+        @AuraEnabled  
+        public Decimal AverageCost; 
+        @AuraEnabled  
+        public Decimal MaximumCost; 
+        @AuraEnabled  
+        public Decimal MinimumCost; 
+        @AuraEnabled  
+        public Double Distance; 
+        @AuraEnabled  
+        public cls_ServiceProvider ServiceProvider;
+        @AuraEnabled  
+        public cls_ServiceLocation ServiceLocation;
+        @AuraEnabled  
+        public string PrimaryBillingCode;
+        @AuraEnabled  
+        public string ReferencePrice;
+    }
+    class cls_CostToMember {
+    }
+    class cls_AmountTowardCoinsurance {
+    }
+    class cls_AmountTowardDeductible {
+    }
+    class cls_AmountTowardCopay {
+    }
+    class cls_RelativeCost {
+    }
+    class cls_RelativeFromValue {
+    }
+    class cls_NotCoveredAmount {
+    }
+    class cls_ServiceProvider {
+        
+        @AuraEnabled  
+        public String DistinguishedKey;
+        @AuraEnabled  
+        public String PhoneNumber;  
+        @AuraEnabled  
+        public String Name; 
+        @AuraEnabled  
+        public Integer TierNumber; 
+        @AuraEnabled  
+        public string TierName;
+        @AuraEnabled  
+        public string PlanCode;
+        @AuraEnabled  
+        public string ProductId;
+        @AuraEnabled  
+        public String ProviderNumber;   
+        @AuraEnabled  
+        public string ProviderNumberSuffix;
+        @AuraEnabled  
+        public string LocationSequenceNumber;
+        @AuraEnabled  
+        public string FederalTaxId;
+        @AuraEnabled  
+        public string Npi;
+        @AuraEnabled  
+        public cls_Address Address;
+        @AuraEnabled  
+        public String ProviderTypeCode;
+        @AuraEnabled  
+        public Integer FacilityTypeId;  
+        @AuraEnabled  
+        public String ProviderIdentityOwner;
+        @AuraEnabled  
+        public String  BlueDistinctionCode;
+    }
+    class cls_TierName {
+    }
+    class cls_PlanCode {
+    }
+    class cls_ProductId {
+    }
+    class cls_ProviderNumberSuffix {
+    }
+    class cls_LocationSequenceNumber {
+    }
+    class cls_FederalTaxId {
+    }
+    class cls_Address {
+        
+        @AuraEnabled  
+        public string AddressType;
+        @AuraEnabled  
+        public String AddressLine1; 
+        @AuraEnabled  
+        public string AddressLine2;
+        @AuraEnabled  
+        public String City; 
+        @AuraEnabled  
+        public Double Latitude;
+        @AuraEnabled  
+        public Double Longitude; 
+        @AuraEnabled  
+        public String State;   
+        @AuraEnabled  
+        public String PostalCode;
+        @AuraEnabled  
+        public string Country;
+        @AuraEnabled  
+        public string CountryCode;
+        @AuraEnabled  
+        public boolean IsPreferredAddress;
+        @AuraEnabled  
+        public boolean ReadOnly;
+    }
+    class cls_AddressType {
+    }
+    class cls_AddressLine2 {
+    }
+    class cls_Country {
+    }
+    class cls_CountryCode {
+    }
+    class cls_BlueDistinctionCode {
+    }
+    class cls_ServiceLocation {
+        public String DistinguishedKey;	//840|OKB1|0K04267401||01
+        public String PhoneNumber;	//918-665-1520
+        public string Name;
+        public Integer TierNumber;	//0
+        public cls_TierName TierName;
+        public String PlanCode;	//840
+        public String ProductId;	//OKB1
+        public String ProviderNumber;	//   0K04267401
+        public String ProviderNumberSuffix;	//  
+        public Integer LocationSequenceNumber;	//1
+        public cls_FederalTaxId FederalTaxId;
+        public String Npi;
+        public cls_Address Address;
+        public string ProviderTypeCode;
+        public Integer FacilityTypeId;	//-1
+        public String ProviderIdentityOwner;	//NCCT
+        public cls_BlueDistinctionCode BlueDistinctionCode;
+    }
+    class cls_PrimaryBillingCode {
+    }
+    class cls_ReferencePrice {
+    }
+    @AuraEnabled  
+    public static CostSearchWrapper parse(String json){
+        return (CostSearchWrapper) System.JSON.deserialize(json, CostSearchWrapper.class);
+    }
+    
+    
+}
